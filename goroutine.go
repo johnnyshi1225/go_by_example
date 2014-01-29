@@ -20,7 +20,7 @@ func main() {
 
 	go foo("goroutine")
 
-	go func (from string) {
+	go func(from string) {
 		for i := 0; i < 5; i++ {
 			Println(from, ":", i)
 			time.Sleep(500 * time.Millisecond)
