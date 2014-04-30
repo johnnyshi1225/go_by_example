@@ -19,6 +19,10 @@ type myError struct {
 	msg string
 }
 
+func test() (e myError) {
+	return
+}
+
 func (e *myError) Error() string {
 	return Sprintf("ERROR_CODE[%d], ERROR_MESSGE[%s]", e.code, e.msg)
 }
@@ -36,4 +40,6 @@ func main() {
 
 	me := &myError{code: 404, msg: "Page not found."}
 	Println(me)
+
+	Println(test())
 }

@@ -2,6 +2,7 @@ package main
 
 import (
 	. "fmt"
+	"time"
 )
 
 func main() {
@@ -29,4 +30,12 @@ func main() {
 	_, prs = nm["k2"]
 	Println(prs)
 
+	s := currentTimeMillis()
+	v, prs := nm["k1"]
+	Printf("v = %s cost: %f ms\n", v, currentTimeMillis() - s)
 }
+
+func currentTimeMillis() float64 {
+	return float64(time.Now().UnixNano()) / 1000000.0
+}
+

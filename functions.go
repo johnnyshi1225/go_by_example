@@ -14,6 +14,10 @@ func getError(code int) (int, string) {
 	return code, "Page not found"
 }
 
+func xxx() (a, b, c, d string) {
+	return "a1", "b2", "c3", "d4"
+}
+
 // Variadic function
 func sum(nums ...int) int {
 	Println(nums)
@@ -38,4 +42,6 @@ func main() {
 
 	nums := []int{1, 3, 5, 7, 9}
 	Println(sum(nums...))
+
+	Println(xxx())
 }

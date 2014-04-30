@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 func main() {
 	num := 7
@@ -12,4 +15,9 @@ func main() {
 		fmt.Printf("%d is odd\n", num)
 		fmt.Println(num, "is odd")
 	}
+
+	s := "12313x"
+	i, err := strconv.Atoi(s)
+	fmt.Println(i, err)
+
 }
