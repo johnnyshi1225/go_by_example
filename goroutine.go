@@ -19,45 +19,21 @@ func (p Person) SayHi() {
 }
 
 func foo(from string) {
-	for i := 0; i < 5; i++ {
-		Println(from, ":", i)
-		time.Sleep(500 * time.Millisecond)
-	}
+	time.Sleep(2000 * time.Millisecond)
 }
 
 func main() {
 	runtime.GOMAXPROCS(runtime.NumCPU())
 
-	p := Person{name : "Johnny"}
-	p.Friends = map[string]string{
-		"w" : "15810294921",
-		"x" : "14241823951",
+	for i := 0; i <= 10000; i++ {
+		go foo("goroutine")
+		Printf("%d\n", runtime.NumGoroutine())
 	}
-	go func() {
-		//p.SayHi()
-		if v, prs := p.Friends["w"]; prs {
-			Println(v)
-		}
-	}()
-	go func() {
-		//p.SayHi()
-		if v, prs := p.Friends["x"]; prs {
-			Println(v)
-		}
-	}()
 
-	/*
-	foo("main")
-
-	go foo("goroutine")
-
-	go func(from string) {
-		for i := 0; i < 5; i++ {
-			Println(from, ":", i)
-			time.Sleep(500 * time.Millisecond)
-		}
-	}("going")
-	*/
+	for {
+		time.Sleep(100 * time.Millisecond)
+		Printf("%d\n", runtime.NumGoroutine())
+	}
 
 	var s string
 	Scanln(&s)

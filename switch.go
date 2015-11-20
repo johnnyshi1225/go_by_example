@@ -5,6 +5,16 @@ import (
 	"time"
 )
 
+func even(n int) (ret bool) {
+	if n % 2 == 0 {
+		ret = true
+	} else {
+		ret = false
+	}
+
+	return
+}
+
 func main() {
 	current := time.Now()
 	Println(current.Weekday())
@@ -23,4 +33,14 @@ func main() {
 	default:
 		Println("It's after noon")
 	}
+
+	/*
+	num := 1
+	switch {
+	case even := even(num); even == true:
+		Println("even")
+	case even := even(num); even == false:
+		Println("odd")
+	}
+	*/
 }

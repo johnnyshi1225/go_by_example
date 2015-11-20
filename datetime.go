@@ -1,27 +1,18 @@
 //#########################################################################
 // Author: Johnny Shi
-// Created Time: 2014-04-10 15:53:35
-// File Name: file.go
+// Created Time: 2015-08-12 16:01:23
+// File Name: datetime.go
 // Description: 
 //#########################################################################
 package main
 
 import (
 	"fmt"
-	"io/ioutil"
-	"strings"
 )
 
 func main() {
-	content, err := ioutil.ReadFile("demo.go")
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	lines := strings.Split(string(content), "\n")
-	for _, line := range lines {
-		fmt.Println(line)
-	}
+	fmt.Println("main")
 }
+
 
 // vim: set noexpandtab ts=4 sts=4 sw=4 :

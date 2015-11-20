@@ -1,38 +1,30 @@
 package main
 
 import (
-	. "fmt"
+	"fmt"
 	"time"
 )
 
 func main() {
 	m := make(map[string]string)
-	m["k1"] = "v1"
-	m["k2"] = "v2"
-	Println(m)
 
-	nm := map[string]string{
-		"k1": "v1",
-		"k2": "v2",
-		"k3": "v3",
-		"k4": "v4",
+	n := 10000000
+	for i := 0; i < n; i++ {
+		m[fmt.Sprintf("k%d", i)] = fmt.Sprintf("v%d", i)
 	}
 
-	Println(nm)
-
-	Println(nm["k2"])
-
-	_, prs := nm["k2"]
-	Println(prs)
-	delete(nm, "k2")
-	Println(nm)
-	Println(nm["k2"])
-	_, prs = nm["k2"]
-	Println(prs)
+	fmt.Println("make data done")
 
 	s := currentTimeMillis()
-	v, prs := nm["k1"]
-	Printf("v = %s cost: %f ms\n", v, currentTimeMillis() - s)
+	fmt.Println(len(m))
+	/*
+	for k, _ := range m {
+		delete(m, k)
+	}
+	fmt.Println(m)
+	*/
+	fmt.Printf("cost: %f ms\n", currentTimeMillis() - s)
+
 }
 
 func currentTimeMillis() float64 {

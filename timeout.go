@@ -8,6 +8,7 @@ import (
 const TIMEOUT = 1 * time.Second
 
 func main() {
+	/*
 	c1 := make(chan string)
 	go func() {
 		Println("Working...")
@@ -21,4 +22,6 @@ func main() {
 	case <-time.After(TIMEOUT):
 		Printf("Timeout after %d s\n", TIMEOUT / time.Second)
 	}
+	*/
+	Printf("%d", time.Now().Unix())
 }
